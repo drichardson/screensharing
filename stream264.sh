@@ -3,6 +3,8 @@
 VIDEO_SIZE=2560x1440
 #VIDEO_SIZE=1920x1080
 
+SCALED_WIDTH=1920
+
 
 # Display a rectangle around recorded region of screen
 SHOW_REGION="-show_region 1"
@@ -22,9 +24,11 @@ ffmpeg \
 	-video_size $VIDEO_SIZE  \
 	-i desktop \
 	\
+	-filter:v "scale=$SCALED_WIDTH:-1" \
+	\
 	-c:v libx264 \
 	-b:v 10M \
-	-crf 10 \
+	-crf 23 \
 	-g $GOP \
 	-pix_fmt yuv420p \
 	-preset ultrafast \
