@@ -2,20 +2,16 @@
 
 ffmpeg \
 	-y \
-	\
 	-f gdigrab \
+	-show_region 1 \
 	-framerate 30 \
 	-video_size 2560x1440  \
 	-offset_x 0  \
 	-offset_y 0 \
 	-i desktop \
-	\
-	-c:v libx264rgb \
+	-c:v libx264 \
 	-preset ultrafast \
-	-profile:v high444 \
-	-tune zerolatency \
+	-profile:v high \
 	-crf 0 \
-	-b:v 10M \
-	-f rtp rtp://localhost:5555
-
+	out.mkv
 
