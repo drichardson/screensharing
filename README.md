@@ -10,10 +10,12 @@ ffmpeg -h encoder=libx264
 ffmpeg -h encoder=libx265
 
 
-- https://trac.ffmpeg.org/wiki/Encode/VP9
+- https://devblogs.nvidia.com/nvidia-ffmpeg-transcoding-guide/
+- https://trac.ffmpeg.org/wiki/Encode/AV1
 - https://trac.ffmpeg.org/wiki/Encode/H.264
 - https://trac.ffmpeg.org/wiki/Encode/H.265
-- https://devblogs.nvidia.com/nvidia-ffmpeg-transcoding-guide/
+- https://trac.ffmpeg.org/wiki/Encode/VP8
+- https://trac.ffmpeg.org/wiki/Encode/VP9
 - https://www.ffmpeg.org/ffmpeg-codecs.html#libx264_002c-libx264rgb
 
 # libx264rgb

@@ -24,12 +24,11 @@ ffmpeg \
 	\
 	-filter:v "scale=$SCALED_WIDTH:-1" \
 	\
-	-c:v libx265 \
+	-c:v libvpx \
+	-b:v 10M \
 	-crf 10 \
 	-g $GOP \
-	-preset ultrafast \
-	-profile:v main444-8 \
-	-tune zerolatency \
+	-pix_fmt yuv422p \
 	-f rtp rtp://localhost:5555
 
 

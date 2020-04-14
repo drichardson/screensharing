@@ -14,8 +14,6 @@ KEYFRAME_INTERVAL=2
 GOP=$((FRAMERATE*KEYFRAME_INTERVAL))
 
 ffmpeg \
-	-y \
-	\
 	-f gdigrab \
 	$SHOW_REGION \
 	-framerate $FRAMERATE \

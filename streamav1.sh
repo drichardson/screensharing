@@ -14,6 +14,8 @@ KEYFRAME_INTERVAL=2
 GOP=$((FRAMERATE*KEYFRAME_INTERVAL))
 
 ffmpeg \
+	-y \
+	\
 	-f gdigrab \
 	$SHOW_REGION \
 	-framerate $FRAMERATE \
@@ -24,12 +26,11 @@ ffmpeg \
 	\
 	-filter:v "scale=$SCALED_WIDTH:-1" \
 	\
-	-c:v libx265 \
-	-crf 10 \
+	-strict experimental \
+	-c:v libaom-av1 \
+	-b:v 0 \
+	-crf 30 \
 	-g $GOP \
-	-preset ultrafast \
-	-profile:v main444-8 \
-	-tune zerolatency \
 	-f rtp rtp://localhost:5555
 
 
