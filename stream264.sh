@@ -22,12 +22,13 @@ ffmpeg \
 	$SHOW_REGION \
 	-i desktop \
 	\
-	-c:v libx264rgb \
+	-c:v libx264 \
 	-preset ultrafast \
-	-profile:v high444 \
+	-profile:v high \
 	-tune zerolatency \
+	-pix_fmt yuv420p \
 	-g $GOP \
-	-crf 0 \
+	-crf 23 \
 	-b:v 10M \
 	-f rtp rtp://localhost:5555
 
