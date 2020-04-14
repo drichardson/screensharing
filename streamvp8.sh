@@ -9,7 +9,7 @@ SCALED_WIDTH=1920
 # Display a rectangle around recorded region of screen
 #SHOW_REGION="-show_region 1"
 
-FRAMERATE=30
+FRAMERATE=5
 KEYFRAME_INTERVAL=2
 GOP=$((FRAMERATE*KEYFRAME_INTERVAL))
 
@@ -23,12 +23,14 @@ ffmpeg \
 	-i desktop \
 	\
 	-filter:v "scale=$SCALED_WIDTH:-1" \
+	-filter:v "format=yuv422p" \
 	\
 	-c:v libvpx \
 	-b:v 10M \
 	-crf 10 \
 	-g $GOP \
-	-pix_fmt yuv422p \
 	-f rtp rtp://localhost:5555
+
+# -pix_fmt yuv422p \
 
 
