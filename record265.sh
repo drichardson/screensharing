@@ -9,7 +9,7 @@ ffmpeg \
 	-offset_x 0  \
 	-offset_y 0 \
 	-i desktop \
-	-c:v libx264 \
+	-c:v libx265 \
 	-preset ultrafast \
 	-profile:v high \
 	-crf 0 \

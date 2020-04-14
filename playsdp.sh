@@ -10,9 +10,9 @@ fi
 
 # zerolatency on the player really helps in the case of x265. In my experiment,
 # it reduced latency from 4 seconds to 2 seconds.
-ZERO_LATENCY="-tune zerolatency"
+#ZERO_LATENCY="-tune zerolatency"
 
 ffplay \
 	-protocol_whitelist rtp,file,udp \
 	-i "$SDP" \
-	$ZERO_LATENCY \
+	$ZERO_LATENCY
